@@ -3,34 +3,8 @@
 	<head>
 		<meta charset='UTF-8'>
 		<title>Make Money!!!</title>
+        <link rel="stylesheet" href="/assets/css/style.css">
 	</head>
-	<style type="text/css">
-		body {
-			width: 970px;
-			margin: 0 auto;
-		}
-		.places {
-			width: 200px;
-			height: 200px;
-			text-align: center;
-			border: 1px solid black;
-			display: inline-block;
-		}
-		.activities {
-			width: 700px;
-			height: 200px;
-			border: 1px solid black;
-			overflow: scroll;
-		}
-		.score {
-			margin-left: 20px;
-			width: 50px;
-			height: 30px;
-			border: 1px solid black;
-			display: inline;
-		}
-
-	</style>
 	<body>
 		<h2>Your Gold<div class='score'><?php if(isset($gold)) { echo $gold;} else echo "0"; ?></div></h2>
 		<div class='places'>
@@ -69,7 +43,8 @@
 		<div class='activities'>
 			<?php if(isset($activities)) { echo $activities;} else echo " "; ?>
 		</div>
-		<form action='process.php'>
+		<form action='/process_money' method='post'>
+			<input type="hidden" name="action" value="reset">
 		 <input type='submit' value='reset'>
 		</form>
 		

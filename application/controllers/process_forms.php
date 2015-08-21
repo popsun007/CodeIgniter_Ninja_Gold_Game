@@ -42,6 +42,11 @@ class Process_forms extends CI_Controller
 		{
 			$this->session->set_userdata('gold', 0);
 		}
+		if($this->input->post('action') == "reset")
+		{
+			$this->session->sess_destroy();
+			redirect('index');
+		}
 		redirect('home');
 	}
 }
